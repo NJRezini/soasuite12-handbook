@@ -14,7 +14,7 @@
     </con:coreEntry>
     <con:router>
         <con:pipeline type="request" name="request-7f000001.546afb8a.0.178905acaff.N8000">
-            <con:stage id="_StageId-7f000001.546afb8a.0.178905acaff.N7ffe" name="Stage1">
+            <con:stage id="_StageId-7f000001.546afb8a.0.178905acaff.N7ffe" name="Stage1" errorHandler="error-7f000001.5567c9ce.0.178a851cfc5.N7fcd">
                 <con:context>
                     <con1:userNsDecl prefix="con" namespace="saibot.airport/services/utility/conversion"/>
                 </con:context>
@@ -44,6 +44,18 @@
             <con:stage id="_StageId-7f000001.546afb8a.0.178905acaff.N7ffd" name="Stage1">
                 <con:context/>
                 <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-7f000001.5567c9ce.0.178a851cfc5.N7fcd">
+            <con:stage id="_StageId-7f000001.5567c9ce.0.178a851cfc5.N7fcc" name="Stage1">
+                <con:context/>
+                <con:actions>
+                    <con2:Error>
+                        <con1:id>_ActionId-7f000001.5567c9ce.0.178a851cfc5.N7fc9</con1:id>
+                        <con2:errCode>SAIBOT-001</con2:errCode>
+                        <con2:message>The request message did not comply with the definitions in the XSD</con2:message>
+                    </con2:Error>
+                </con:actions>
             </con:stage>
         </con:pipeline>
         <con:flow>
